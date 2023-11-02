@@ -30,10 +30,12 @@ output "notebooks_googlemanaged_names" {
   value       = join(", ", google_notebooks_runtime.ai_notebook_googlemanaged[*].name)
 }
 
+/*
 output "notebooks_googlemanaged_urls" {
   description = "Google Managed Notebook access URLs"
   value       = formatlist("https://%s", google_notebooks_runtime.ai_notebook_googlemanaged[*].proxy_uri)
 }
+*/
 
 output "notebooks_usermanaged_names" {
   description = "User Managed Notebook Instance Names"
