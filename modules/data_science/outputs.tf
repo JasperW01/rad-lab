@@ -30,12 +30,10 @@ output "notebooks_googlemanaged_names" {
   value       = join(", ", google_notebooks_runtime.ai_notebook_googlemanaged[*].name)
 }
 
-/*
 output "notebooks_googlemanaged_urls" {
   description = "Google Managed Notebook access URLs"
-  value       = formatlist("https://%s", google_notebooks_runtime.ai_notebook_googlemanaged[*].proxy_uri)
+  value       = formatlist("https://console.cloud.google.com/vertex-ai/workbench/managed?project=%s", local.project.project_id)
 }
-*/
 
 output "notebooks_usermanaged_names" {
   description = "User Managed Notebook Instance Names"
